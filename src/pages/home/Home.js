@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
 
-export default function Home() {
+export default function Home()
+{
+  const [count, setCount] = useState( "true" );
+ 
+
+  const handleClick = () =>
+  {
+    if ( count === "true" )
+    {
+      setCount( "false" )
+    } else
+    {
+      setCount( "true" )
+    }
+    
+  };
   return (
-    <div><Link to="/about">Go About</Link></div>
+    <div>
+      <Button variant="primary" onClick={handleClick}>Primary</Button>
+      <hr/>
+      <h1>this is {count}</h1>
+    </div>
+    
   )
 }
