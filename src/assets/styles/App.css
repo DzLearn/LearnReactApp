@@ -7,13 +7,3 @@
 .contant-wrap{
     flex: 1;
 }
-
-.card{
-    margin-top: 10px;
-}
-
-.home-container{
-     display: flex;
-     justify-content: space-around;
-     flex-wrap: wrap;
-}
