@@ -1,18 +1,27 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import Axios from 'axios'
+
+import { Link } from "react-router-dom";
 
 import { Card, Button } from 'react-bootstrap'
 
-const items = ["Item 1", "Item 2", "Item 1", "Item 2", "Item 2", "Item 1", "Item 2"]
-
 export default function Home()
 {
+  const [data, setData] = useState( [] )
+  
+  
+  useEffect( () =>
+  {
+    Axios.get( 'https://jsonplaceholder.typicode.com/posts' )
+      .then( res => setData( res.data ) ).catch( err => console.log(err) )
+  },[])
   return (
     <div className='container'>
       <div className='home-container'>
-        {items.map( ( item, index ) =>
+        {data.map( ( data, index ) =>
         {
-          return <Cards title={ item }/>
-        })}
+          return <Cards data={data} />
+        } )}
       </div>
     </div>
     
@@ -21,16 +30,18 @@ export default function Home()
 
 function Cards(props)
 {
+  const [more, setMore] = useState( true )
   return (
     <Card style={{ width: '50rem' }}>
       <Card.Img variant="top" src={require("../assets/images/img1.jpg")}/>
       <Card.Body>
-        <Card.Title>{ props.title }</Card.Title>
+        <Card.Title>{props.data.title.slice( 0, 10 )}..</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+          {more ? props.data.body.slice( 0,  50  ) : props.data.body}
+          <br/>
+          <button onClick={()=>{setMore(!more)}}>read more</button>
+          </Card.Text>
+        <Button variant="primary"><Link to={`/card/${ props.data.id }`}>Go somewhere</Link></Button>
       </Card.Body>
     </Card>
   )
