@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Routes, Route } from "react-router-dom";
 
-import Home from '../pages/home/Home'
-import About from '../pages/about/About'
+import Home from '../pages/Home'
+import About from '../pages/About'
 
 export default function NavRoutes() {
   return (
