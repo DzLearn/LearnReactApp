@@ -8,10 +8,12 @@ import NavRoutes from './routes/Routes'
 
 function App() {
   return (
-    <div className="App">
+    <div className="page-container">
       <BrowserRouter>
         <Header />
-        <NavRoutes />
+        <div className='contant-wrap'>
+          <NavRoutes />
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
