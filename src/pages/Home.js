@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Card, Button } from 'react-bootstrap'
 
-const items = ["Item 1","Item 2"]
+const items = ["Item 1", "Item 2", "Item 1", "Item 2", "Item 2", "Item 1", "Item 2"]
 
 export default function Home()
 {
@@ -22,7 +22,7 @@ export default function Home()
 function Cards(props)
 {
   return (
-    <Card style={{ width: '20rem' }}>
+    <Card style={{ width: '50rem' }}>
       <Card.Img variant="top" src={require("../assets/images/img1.jpg")}/>
       <Card.Body>
         <Card.Title>{ props.title }</Card.Title>
