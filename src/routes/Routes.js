@@ -3,15 +3,15 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 
 import Home from '../pages/Home'
-import About from '../pages/About'
+import Motion from '../pages/Motion'
 import ReadMore from '../pages/ReadMore';
 
 export default function NavRoutes() {
   return (
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/motion" element={<Motion />} />
       <Route path="/card/:id" element={<ReadMore />} />
-      </Routes>
+    </Routes>
   )
 }

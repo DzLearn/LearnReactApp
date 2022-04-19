@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
-
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { Card, Button } from 'react-bootstrap'
+
+const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'white',
+    cursor: "pointer"
+};
 
 export default function ReadMore(props)
 {
@@ -15,9 +23,20 @@ export default function ReadMore(props)
     }, [id] )
 
     return (
-        <div>
-            <h3>{data.title }</h3>
-            <p>{data.body }</p>
+        <div className='container'>
+            <Card className="text-center">
+                <Card.Header>Featured</Card.Header>
+                <Card.Body>
+                    <Card.Title>{data.title}</Card.Title>
+                    <Card.Text>
+                        {data.body}
+                    </Card.Text>
+                    <Button variant="primary">
+                        <Link to="/" style={linkStyle}>Return Home</Link>
+                    </Button>
+                </Card.Body>
+                <Card.Footer className="text-muted">{data.userId} days ago</Card.Footer>
+            </Card>
         </div>
     )
 }

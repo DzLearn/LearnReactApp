@@ -23,7 +23,7 @@ export default function Header() {
               navbarScroll
             >
               <Nav.Link><Link to="/" style={linkStyle}>Home</Link></Nav.Link>
-              <Nav.Link><Link to="/about" style={linkStyle}>About</Link></Nav.Link>
+              <Nav.Link><Link to="/motion" style={linkStyle}>Framer Motion</Link></Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
