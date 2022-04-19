@@ -26,17 +26,17 @@ export default function Home()
   
   return (
     <motion.div className="home container"
-      animate={{rotateZ:180,opacity:0.2,marginTop:200}}
+      animate={{}}
     >
       <motion.h2
-        animate={{ fontSize: 200, color: "#ff2994",x:-50,y:-50 }}
+        animate={{  }}
         transition={{ duration: 1 }}
       >
         Welcome to Pizza Joint
       </motion.h2>
       <Link to="/base">
         <motion.button
-          animate={{ scale: 1.5 }}
+          animate={{  }}
           transition={{ duration: 1 }}
         >
           Create Your Pizza
