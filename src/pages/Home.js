@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 import { Card, Button } from 'react-bootstrap'
 
+import {motion} from 'framer-motion'
+
 const linkStyle = {
   margin: "1rem",
   textDecoration: "none",
@@ -16,23 +18,31 @@ export default function Home()
 {
   const [data, setData] = useState( [] )
   
-  
   useEffect( () =>
   {
     Axios.get( 'https://jsonplaceholder.typicode.com/posts' )
       .then( res => setData( res.data ) ).catch( err => console.log(err) )
-  },[])
+  }, [] )
+  
   return (
-    <div className="home container">
-      <h2>
+    <motion.div className="home container"
+      animate={{rotat,opacity:0.2,marginTop:200}}
+    >
+      <motion.h2
+        animate={{ fontSize: 200, color: "#ff2994",x:-50,y:-50 }}
+        transition={{ duration: 1 }}
+      >
         Welcome to Pizza Joint
-      </h2>
+      </motion.h2>
       <Link to="/base">
-        <button>
+        <motion.button
+          animate={{ scale: 1.5 }}
+          transition={{ duration: 1 }}
+        >
           Create Your Pizza
-        </button>
+        </motion.button>
       </Link>
-    </div>
+    </motion.div>
   )
 }
 
