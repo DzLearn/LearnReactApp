@@ -26,7 +26,7 @@ export default function Home()
   
   return (
     <motion.div className="home container"
-      animate={{rotat,opacity:0.2,marginTop:200}}
+      animate={{rotateZ:180,opacity:0.2,marginTop:200}}
     >
       <motion.h2
         animate={{ fontSize: 200, color: "#ff2994",x:-50,y:-50 }}
