@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 
 import { Card, Button } from 'react-bootstrap'
 
+const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: 'white',
+  cursor: "pointer"
+};
+
 export default function Home()
 {
   const [data, setData] = useState( [] )
@@ -41,7 +48,9 @@ function Cards(props)
           <br/>
           <button onClick={()=>{setMore(!more)}}>read more</button>
           </Card.Text>
-        <Button variant="primary"><Link to={`/card/${ props.data.id }`}>Go somewhere</Link></Button>
+        <Button variant="primary">
+          <Link to={`/card/${ props.data.id }`} style={linkStyle}>Go somewhere</Link>
+        </Button>
       </Card.Body>
     </Card>
   )
