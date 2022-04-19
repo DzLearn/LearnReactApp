@@ -23,16 +23,30 @@ export default function Home()
       .then( res => setData( res.data ) ).catch( err => console.log(err) )
   },[])
   return (
-    <div className='container'>
-      <div className='home-container'>
-        {data.map( ( data, index ) =>
-        {
-          return <Cards data={data} />
-        } )}
-      </div>
+    <div className="home container">
+      <h2>
+        Welcome to Pizza Joint
+      </h2>
+      <Link to="/base">
+        <button>
+          Create Your Pizza
+        </button>
+      </Link>
     </div>
-    
   )
+}
+
+function AddCards(props)
+{
+  return (
+    <div className='home-container'>
+      {/**<AddCards data={ data }/> */}
+      {props.data.map( ( data, index ) =>
+      {
+        return <Cards data={data} />
+      } )}
+    </div>
+  );
 }
 
 function Cards(props)
